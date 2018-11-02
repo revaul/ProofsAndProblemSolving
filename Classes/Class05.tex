@@ -1,0 +1,72 @@
+% !TEX root = /Users/us2009801/Documents/GitHub/DifferentialEquations/main.tex
+\chapter{Class 5 - Thursday, February 2\ts{nd}, 2017}
+\section*{\S 8.1}
+\begin{ex} Let:
+\begin{align*}
+    (x+2y+-4)dx-(2x-4y)dy&=0\\
+    (x+2y+-4)dx+(-2x+4y)dy&=0\\
+    \textcolor{red}{P(x,y)dx+Q(x,y)dy}&=0
+\end{align*}
+\begin{itemize}
+  \item Not Separable
+  \item Not Homogeneous Because $-\frac{4}{x}$ exists if we divide by $x$.
+  \item Linear Coefficients
+  \begin{itemize}
+    \item Use \S 8 Tools
+  \end{itemize}
+  \item Not Parallel Lines
+  \begin{itemize}
+  \item  $u=P(x,y)$ and $v=Q(x,y)$
+  \end{itemize}
+\end{itemize}
+\begin{note}
+Goal: Rewrite the Equation with $u$ and $v$ such that it becomes a homogeneous equation. $\rightarrow$ use \S 7 Tools
+\end{note}
+\begin{center}
+ \begin{tabular}{|c|c|} 
+ \hline
+ $u=x+2y-4$ & $v=-2x+4y$\\
+ \hline
+ $du=dx+2y\,dy$ & $dv=-2dx+4dy$\\ 
+ \hline
+\end{tabular}
+\end{center}
+\begin{align*}
+    dx&= du-2dy\\
+    dx&=du-\frac{1}{4}dv-\frac{1}{2}du\\
+    dx&=\frac{1}{2}du-\frac{1}{4}du\\
+    dv&=-2(du-2dy)+4dy\\
+    dv&= -2du+8dy\\
+    \frac{dv+2du}{8}&= dy\\
+    dy&=\frac{1}{4}du+\frac{1}{8}dv
+\end{align*}
+\end{ex}
+\begin{ex}
+    $$u \left( \frac{1}{2}du-\frac{1}{4}dv \right) +v \left( \frac{1}{4}du+\frac{1}{8} dv \right) &=0$$
+\begin{note}
+\textcolor{red}{Trick: Multiply by 8 to clear functions.}
+\end{note}
+\begin{align*}
+    4u\,du-2u\,dv+2v\,du+v\,dv&=0\\
+    (4u+2v)du+(-2u+v)dv&=0
+\end{align*}
+\begin{note}
+\textcolor{red}{Homogeneous since we find $\frac{v}{u}$}
+\end{note}
+$$\left( 4+\frac{2v}{u} \right) du+ \left( -2+\frac{v}{u} \right) dv &=0$$\\
+\textcolor{red}{Let $w=\frac{v}{u}$ $\rightarrow$ $v=uw$ $\rightarrow$ $dv=u\,dw+w\,du$}
+\end{ex}
+\begin{ex}
+    \begin{align*}
+        (4+2w)du+(-2+w)(u\,dw+w\,du)&=0\\
+        4du+2w\,du-2u\,dw -2w\,du+uw\,dw+w^2\,du&=0\\
+        \left( 4+2w-2w+w^2 \right)du+(-2u+uw)dw&=0\\
+        \left( 4+w^2 \right)du+(-2u+uw)dw&=0\\
+        \left( 4+w^2 \right) du +u(-2+w)dw&=0\\
+        \frac{1}{u}du + \frac{(-2+w)}{(4+w^2)}dw&=0\\
+        \ln |u| - \tan^{-1} \left( \frac{w}{2} \right)+\frac{1}{2} \ln \left| 4+w^2 \right|&=c\\
+        \textcolor{red}{u}&=\textcolor{red}{x+2y-4}\\
+        \textcolor{red}{w}&=\textcolor{red}{\frac{-2x+4y}{x+2y-4}}\\
+    \end{align*}
+\end{ex}
+\section*{\S 9 Exact Equations}

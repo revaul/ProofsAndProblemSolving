@@ -1,0 +1,129 @@
+% !TEX root = /Users/us2009801/Documents/GitHub/DifferentialEquations/main.tex
+\chapter{Class 3 - Thursday, January 26\ts{th}, 2017}
+\begin{hwk}
+The following item appeared in a newspaper. "The expedition used the carbon-14 test to measure the amount of radioactivity still present in the organic material found in the ruins, thereby determining that a town existed there as long ago as 7000 B.C." Using the half-life figure of $C^{14}$ as given in the text, determine the approximate percentage of $c^{14}$ still present in the organic material at the time of the discovery.\\\\
+Half Life = 5,600 years (After 5,600 years, 50\% is gone). Therefore determine the percent present at discovery.\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{At 7,000 B.C.} &  & \multicolumn{2}{|c|}{At 1,940 A.D.}\\
+\hline
+$t=0$ & $y=1$ &  & $t=8940$ & $\%=$? \\
+\hline
+\end{tabular}
+\end{center}
+\begin{align*}
+    \dfrac{dy}{dt}&=-ky\\
+    \int \frac{1}{4} dy &= \int -k dt\\
+    \ln|y|&=-kt\\
+    \text{General Solution} \rightarrow y&=Ce^{-kt}\\
+    1&=Ce^{-k(0)}\\
+    1&=C\\
+    y&=e^{-kt}\\
+    .5&=e^{-5600k}\\
+    \ln (.5)&=\ln(e^{-5600k})\\
+    \ln(.5)&=-5600k\\
+    \frac{\ln(.5)}{-5600}&=k\\
+    \frac{\ln (2)}{5600}&=0.000124\\
+    k&=1.24e^{-4}\\
+    y&= e^{-(1.24e^{-4})(8940)}\\
+    y&=.325\\
+    y&=32.5\% \text{ Remaining}
+\end{align*}
+\end{hwk}
+
+\section*{\S 6 Separable Differential Equations}
+\begin{align*}
+    f'(x)&=\dfrac{dy}{dx}\\
+    dy&=f'(x)dx\\
+    &=f'(x)\Delta x \text{ for small } \Delta\\
+    \textcolor{red}{\text{Notation} (\star )} \rightarrow \textcolor{red}{P(x,y)dx+Q(x,y)dy}&=\textcolor{red}{0}\\
+    P(x,y)+Q(x,y) \dfrac{dy}{dx}&=0
+\end{align*}
+\begin{imp:defn}{Separable Differential Equation}{} An ODE is separable if $(\star )$ can be written as:
+\begin{align*}
+  f(x)dx+g(y)dy&=0 \\
+  \rightarrow \int f(x)dx+\int g(x)dy &=c
+\end{align*}
+\end{imp:defn}
+\begin{ex}
+\begin{align*}
+    xdy-ydx&=0\\
+    xdy&=ydx \leftarrow \text{ if } x,y\neq 0\\
+    \int \dfrac{1}{y} dy &= \int \dfrac{1}{x} dx\\
+    \ln |y|+c_1 &= \ln |x| +c_2\\
+    e^{\ln |y|} &= e^{\ln |x|} +c\\
+    y &= cx
+\end{align*}
+\end{ex}
+\begin{ex}
+\begin{align*}
+    (x-1)cos(y) dy &= (2x)sin(y) dx\\
+    \frac{(x-1)cos(y)}{sin(y)} dy &= \frac{(2x)sin(y) dx}{sin(y)}\\
+    \frac{(x-1)cos(y)}{sin(y)} dy &= (2x)dx\\
+    \frac{(x-1)cos(y)}{sin(y)(x-1)} dy &= \frac{(2x)}{(x-1)}dx\\
+    \frac{cos(y)}{sin(y)} dy &= \frac{(2x)}{(x-1)}dx\\
+    \int \frac{cos(y)}{sin(y)} dy &= \int \frac{(2x)}{(x-1)}dx\\
+    \textcolor{blue}{u} &= \textcolor{blue}{sin(y)}\\
+    \textcolor{blue}{du} &= \textcolor{blue}{cos(y)dy}\\
+    \ln |sin(y)| &= \int \frac{(2x)}{(x-1)}dx\\
+    \ln |sin(y)| &= 2\int \frac{(x)}{(x-1)}dx  \textcolor{red}{ +\frac{-1+1}{1}=0 \leftarrow \text{ Fancy 1}}\\
+    \ln |sin(y)| &= 2\int \frac{(x-1)+1}{(x-1)}dx\\
+    \ln |sin(y)| &= 2\int 1+ \frac{1}{(x-1)}dx\\
+    \ln |sin(y)| &= 2 \left[ x +\ln \left| x-1 \right| \right]+c\\
+    \ln |sin(y)| &= 2x +2 \ln \left| x-1 \right| +c\\
+    e^{\ln |sin(y)|} &= e^{2x +2 \ln \left| x-1 \right| +c}\\
+    sin(y) &= e^{2x +2 \ln \left| x-1 \right| +c}\\
+    sin(y) &= (x-1)^2*e^{2x+c}\\
+\end{align*}
+\end{ex}
+\section*{\S 7}
+\begin{ex}
+\begin{align*}
+    (x^2+y^2)dx &= 2xydy\\
+    \frac{x^2 dx}{x}+\frac{y^2 dx}{x}&=\frac{2xy dy}{x}\\
+    xdx+\frac{y^2}{x}dx&=2ydy\\
+    \frac{xdx+\frac{y^2}{x}dx}{\textcolor{red}{y^2}}&=\frac{2ydy}{\textcolor{red}{y^2}}\\
+    \frac{x}{y^2} dx+ \frac{1}{x}dx &= \frac{2}{y}dy\\
+    \left( \frac{x^2}{y^2} +1 \right) dx &= \frac{2xy}{y^2}dy\\
+    \left( \left[ \frac{x}{y} \right]^2 +1 \right) dx &= 2 \left[ \frac{y}{x} \right] dy\\
+    \left[  1+ \left( \frac{y}{x}\right) ^2  \right] dx &= 2 \left[ \frac{y}{x} \right] dy\\
+    \textcolor{blue}{u} &= \textcolor{blue}{\frac{y}{x}}\\
+    \textcolor{blue}{y} &= \textcolor{blue}{ux}\\
+    \textcolor{blue}{dy} &= \textcolor{blue}{udx+xdu}\\
+    \left( 1+u^2 \right)dx &= 2u \left( udx+xdu \right)\\
+    1dx+u^2dx &= 2u^2dx+2xudu\\
+    1dx+-u^2dx &= 2xudu\\
+    \left( 1-u^2 \right) dx &= 2x u du\\
+    \textcolor{blue}{\frac{1}{x}} * \frac{\left( 1-u^2 \right) }{\textcolor{red}{1-u^2}} dx &= \frac{2x}{\textcolor{blue}{x}} * \frac{u du}{\textcolor{red}{1-u^2}}\\
+    \frac{1}{x}dx &= 2\frac{u}{1-u^2}du\\
+    \int \frac{1}{x}dx &= \int 2\frac{u}{1-u^2}du\\
+    \ln |x| &= \ln |1-u^2|^{-1}+c\\
+    x &= \frac{1}{1-u^2}*e^c\\
+    1-u^2 &= \frac{1}{x} *c\\
+    1-\left[ \frac{y}{x} \right] ^2 &= \frac{1}{x}*c\\
+    \textcolor{red}{y(-1)} &= \textcolor{red}{0}\\
+    1-\left[ \frac{0}{-1} \right]^2 &= \frac{1}{-1}*c\\
+    \textcolor{red}{c} &= \textcolor{red}{-1}\\
+    1-\frac{y^2}{x^2} &= - \frac{1}{x}\\
+    y^2 &= x^2+x\\
+\end{align*}
+\end{ex}
+\begin{imp:defn}{Homogeneous Function}{} The Equation $z=f(x,y)$ is Homogeneous of order n if $f(x,y)=x^n*g(u)$ for %u=\frac{y}{x}$
+\end{imp:defn}
+\begin{imp:defn}{1\ts{st} Order Ordinary Differential Equation with Homogeneous Coefficients}{} Let $$(\star ) \rightarrow P(x,y) dx+Q(x,y)dy=0$$ where $P(x,y)$ and $Q(x,y)$ are homogeneous functions of order n.
+\end{imp:defn}
+\begin{imp:thm}{} IIf coefficients in $(\star )$ are each homogeneous functions of order n, then $y=ux$ and $dy=udx+xdu$ leads to a separable equation.\\
+Verify the Coefficients in the example are homogeneous:\\
+\begin{align*}
+    \left( x^2+y^2\right) dx &= 2xy*dy\\
+    0 = P(x,y) &= x^2 + y^2\\
+    1+\frac{y^2}{x^2} &= g(u)\\
+    u&= \frac{y}{x} \leftarrow \textcolor{red}{\text{0\ts{th} order}}\\
+    g(u) &= 1+u^2\\
+    Q(x,y) &= -2xy\\
+    0 &= -2xy\\
+    0 &= -\frac{2y}{x}\\
+    -2u &= g(u) \leftarrow \textcolor{red}{\text{0\ts{th} order}}
+\end{align*}
+\end{imp:thm}

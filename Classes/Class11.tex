@@ -1,0 +1,102 @@
+% !TEX root = /Users/us2009801/Documents/GitHub/DifferentialEquations/main.tex
+\chapter{Class 11 - Exam Review - Thursday, March 2\ts{nd}, 2017}
+\begin{rvw}
+Exam 2 Review\\
+The Exam will cover:
+\begin{itemize}
+    \item Integrating Factors
+    \begin{itemize}
+        \item 1\ts{st} Order Linear Differential Equations
+        \begin{itemize}
+            \item $\frac{dy}{dx} +P(x)*y=Q(x)$
+            \item $IF = e^{\int P(x)\,dx}$
+        \end{itemize}
+        \item Bernulli Equation
+        \begin{itemize}
+            \item $\frac{dy}{dx}+P(x)*y=Q(x)*y^n$
+            \item $BIF = (1-n)n^{-n} \rightarrow $ Converts into 1\ts{st} Order Differential Equation
+        \end{itemize}
+    \end{itemize}
+    \item \S 15 Applications
+    \begin{itemize}
+        \item Tanks, Temperature (Homework)
+    \end{itemize}
+    \item \S 18 Complex Numbers
+    \item \S 19,20 Linear Independence
+    \begin{itemize}
+        \item n\ts{th} order constant Coefficient Differential Equations
+        \item Characteristic Equations - 3 Cases
+    \end{itemize}
+    \item \S 21 Nonhomogeneous Constant Coefficient Differential Equations - 3 Cases $y=y_c+y_p$
+\end{itemize}
+\begin{ex}
+\S 21.5\\
+\begin{align*}
+    y''+3y'+2y&=e^{ix}\\
+    m^2+3m+2&=0\\
+    m&=-2\\
+    m&=-1\\
+    y_c&= c_1 e^{-2x}+c_2e^{-x}
+\end{align*}
+\begin{note}
+Guess For the Future:
+\end{note}
+\begin{align*}
+    q&=e^{ix}\\
+    q'&=ie^{ix}\\
+    q''&=i^2e^{ix}=-e^{ix}\\
+    i&=\sqrt{-1}\\
+    i^2&=-1\\
+    y_p&=Ae^{ix}+Bie^{ix}\\
+    y_p'&=Aie^{ix}+-Be^{ix}\\
+    y_p''&=-Ae^{ix}-Bie^{ix}
+\end{align*}
+\begin{note}
+Add these
+\end{note}
+\begin{align*}
+    e^{ie}&=e^{ix}(2A-3B-A)+ie^{ix}(2B+3A-B)\\
+    1&=A-3B\\
+    1&=10A\\
+    A&=\frac{1}{10}\\
+    0&=B+3A\\
+    B&=-3A\\
+    B&=\frac{-3}{10}\\
+    y_p&=\frac{1}{10}e^{ix}+\frac{-3}{10}ie^{ix}\\
+    y&=c_1e^{-2x}+c_2e^{-x}+\frac{1}{10}e^{ix}-\frac{3}{10}ie^{ix}\\
+\end{align*}
+\end{ex}
+\begin{ex}
+\S 21.19
+\begin{align*}
+    y''+3y'+2y&=e^{-2x}+x^2\\
+    y_c&=c_1e^{2x}+c_2e^{-x}
+\end{align*}
+\begin{note}
+Use the idea of superposition, namely $Q(x)=Q_1(x)+Q_2(x)$ and solve for $Q_1, Q_2$ Separately, then add together. Consider first:
+\end{note}
+\begin{align*}
+    Q_1(x)&=e^{-2x}\\
+    q&=xe^{-2x}\\
+    q'&=-2xe^{-2x}+e^{-2x}\\
+    y_{p_1}&= Axe^{-2x}\\
+\end{align*}
+\begin{note}
+We use this for $Q_1(x)$. Then do some for $Q_2(x)=x^2$ $$y_{p_2}=Ax^2+Bx+C$$ Use this for $Q_2(x)$. Then $y_p=y_{p_1}+y_{p_2}$
+\end{note}
+\end{ex}
+\begin{ex}
+\S 21.13
+\begin{align*}
+    y''+y'&=x^2+2x\\
+    y_1&=c_1+c_2e^{-x}\\
+    y_p&=Ax^2+Bx
+\end{align*}
+\begin{note}
+Don't need C, Because $c_1$ in $y_c$
+\end{note}
+\end{ex}
+\begin{ex}
+\S 15.5 A tank initially contains 100 gal of brine whose salt concentration is? lb per gal. Brine whose salt concentration is 2 lb per gal flows into the tank at the rate of 3 gal per min. The mixture flows out at the rate of 2 gal per min. Find the salt content of the brine and its concentration at the end of 30 min. Hint. After 30 min, the tank contains 130 gal of brine.
+\end{ex}
+\end{rvw}

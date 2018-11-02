@@ -1,0 +1,59 @@
+% !TEX root = /Users/us2009801/Documents/GitHub/DifferentialEquations/main.tex
+\chapter{Class 14 - Thursday, March 23\ts{rd}, 2017}
+\section*{\S 23 Reduction of Order}
+Suppose $$ \star = f_2(x)*y''+f_1(x)*y'+f_0(x)*y=Q(x)$$ and we have a single solution $y_1$ to $( \star )=0$.\\
+WTF: $y_2$ such that $y_2$ is a solution to $( \star )=0$ to use to find $y_p$.\\
+Let: $y_2=y_1*\int u(x) \,dx $ where WTF $u(x)$.\\
+\begin{ex}
+$y''-\frac{2}{x}y'+ \frac{2}{x^2}y=0$
+\begin{align*}
+    y''-\frac{2}{x}y'+ \frac{2}{x^2}y&=0\\
+    y_2&= x*\int u(x) \,dx \leftarrow \text{ is a solution to } ( \# )=0\\
+    y_2'&=\int u(x) \,dx + x*u(x)\\
+    y_2''&= u(x)+u(x)+xu'(x)\\
+    y_2''&= 2u(x)+xu'(x)\\
+    \left( 2u+xu' \right) -\frac{2}{x} \left( \int u +xu \right) +\frac{2}{x^2} \left( x\sqrt{u} \right) &=0\\
+    xu'&=0\\
+    u'&=0 \text{ if } x=0\\
+    \text{integrate }\rightarrow u&=c\\
+    y_2&=x*\int u \,dx\\
+    y_2&=x*\int c \,dx = cx^2\\
+    y_c&= c_1x+c_2x^2
+\end{align*}
+\end{ex}
+\begin{ex}
+$x^2y''-xy'+y=x$ where $y_1=x$
+\begin{align*}
+    x^2y''-xy'+y&=x\\
+    y_2&=x\int u\\
+    y_2'&=xu+\int u &\rightarrow (\# \# )&=0\\
+    y_2''&=x^{u'}+2u &\rightarrow x^3u'+x^2u&=x\\
+    y_2''&=x^{u'}+2u &\rightarrow u'+\frac{1}{x}u &= \frac{1}{x^2}\\
+    \text{IF}&=e^{\int \frac{1}{x}dx}=e^{\ln |x|}=x\\
+    \frac{d}{dx}[u*x]&=\frac{1}{x}\\
+    u*x&=\int \frac{1}{x} \,dx = \ln |x| +c\\
+    u&=\frac{ln|x|}{x}+\frac{c}{x}\\
+    y_2&= x\int \frac{ln|x|}{x}+\frac{c}{x} \,dx\\
+    y_2&= x\left[ \frac{1}{2} [\ln x]^2 +c*\ln |x| \right]\\
+    y_2&= x \frac{1}{2} [\ln x]^2 +c*x \ln |x|\\
+    y_{\text{total}}&= c_1x+c_2\left[ x \ln x + \frac{1}{2}x [\ln x]^2 \right]
+\end{align*}
+\end{ex}
+\begin{ex}
+$x^2y''+xy'-4y=x^3$ where $y_1=x^2$
+\begin{align*}
+    x^2y''+xy'-4y&=x^3\\
+\end{align*}
+\end{ex}
+\begin{ex}
+$y''+(x^2-x)y'-(x-1)y=0$ where $y_1=x$
+\begin{align*}
+    y''+(x^2-x)y'-(x-1)y&=0\\
+    u'+(x^2-x+\frac{2}{x})u&=0\\
+    u'&=\frac{du}{dx}\\
+    \frac{du}{u}&=\left( -x^2+x-\frac{2}{x} \right) \,dx\\
+    \ln |u| &= -\frac{1}{3}x^3+\frac{1}{2}x^2+2 \ln x +c\\
+    u&= ex_p (-\frac{1}{3}x^3+\frac{1}{2}x^2-2 \ln x +x)\\
+    ex_p&= y_2=x\int
+\end{align*}
+\end{ex}

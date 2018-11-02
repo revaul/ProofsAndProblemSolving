@@ -1,0 +1,101 @@
+\documentclass[12pt]{book}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,fullpage,cancel,hyperref}
+\usepackage{tikz,tcolorbox}
+\usepackage[miktex]{gnuplottex}
+\usepackage{titlesec}
+\usepackage[Bjornstrup]{fncychap}
+\usepackage{lscape}
+\usepackage{import}
+\usepackage{breqn}
+\tcbuselibrary{theorems}
+\newcommand{\ds}{\displaystyle}
+\allowdisplaybreaks
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\usepackage[titles]{tocloft}
+\makeatletter
+\newcommand*{\tocwithouttitle}{\@starttoc{toc}}
+\makeatother
+\usepackage{pgfplots, pgfplotstable}
+\pgfplotsset{compat=1.8}
+
+\renewcommand{\labelitemii}{$\diamond$}
+
+\newcommand{\sep}{\vskip .7in}
+\newcommand{\ansbox}[1]{%
+\hbox to 1.5 truein{\hfil \framebox{\parbox[b]{#1in}{\quad \\ \quad}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\baselineskip =20pt
+\parskip =10pt
+\newcommand{\ts}{\textsuperscript}
+\newtheorem{theorem}{Theorem}
+\newtheorem{alg}{Algorithm}
+\newtheorem{case}{Case}
+\newtheorem{scase}{Case}[case]
+\newtheorem{sscase}{Case}[scase]
+\newtheorem{ssscase}{Case}[sscase]
+\newtheorem{sssscase}{Case}[ssscase]
+\newtheorem{claim}{Claim}
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{note}{Note}
+\newtheorem{fact}{Fact}
+\newtheorem{game}{Game}
+\newtheorem{strat}{Strategy}
+\newtheorem{ex}{Example}
+\newtheorem{prob}{Problem}
+\newtheorem{rul}{Rule}
+\newtheorem{remark}{Remark}
+\newtheorem{objec}{Objective}
+\newtheorem{hwk}{Homework}
+\newtheorem{step}{Step}
+\newtheorem{rvw}{Review}
+
+%**********Highlighted Theorems and Defs**********
+\newtcbtheorem{imp:thm}{Theorem}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem{imp:defn}{Definition}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem{imp:rule}{Rule}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem{imp:form}{Formula}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem{imp:ex}{Example}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{th}
+%*************************************************
+
+\newenvironment{sol}%
+{%
+\noindent{\it Solution.}
+}%
+{%
+ \quad\hfill$\blacktriangledown$\vspace*{2ex}
+}
+
+%***Graphing Code
+%\begin{tikzpicture}[domain=-2:3,xscale=.6,yscale=.6]
+%\draw[thin,color=gray!40] (-2.1,-2.1) grid (3.1,8.1);
+%\draw[->,thick] (-2.2,0) -- (3.2,0) node[right] {x};
+%\draw[->,thick] (0,-2.2) -- (0,8.2) node[above] {y};
+%\draw[thick,color=blue,domain=-2:3,samples=200] plot[id=ex1a] function{(x-1)**2-1} node[right] {$f$};
+%\end{tikzpicture}
+
+\title{MAT 350 - Linear Algebra}
+\author{Mr. Ryan Evaul\\
+Southern New Hampshire University}
+
+\begin{document}
+%\frontmatter
+\maketitle
+%\tableofcontents
+
+\chapter*{\contentsname}
+\markboth{\MakeUppercase{\contentsname}}{\MakeUppercase{\contentsname}}
+\tocwithouttitle
+%\begin{landscape}
+\include{Classes/Class01}
+%\end{landscape}
+\end{document} 

@@ -1,0 +1,129 @@
+% !TEX root = /Users/us2009801/Documents/GitHub/DifferentialEquations/main.tex
+\chapter{Class 4 - Monday, January 30\ts{th}, 2017}
+\begin{hwk}
+\S6 $\#$9\\
+\begin{align*}
+    e^{x+1}\tan y \,dx+\cos y \,dy&=0\\
+    e^{x+1}dx &= -\frac{\cos y}{\tan y}dy\\
+    \int e^{x+1} \,dx &= \int - \frac{\cos^2 y}{\sin y} \,dy\\
+    e^{x+1} \,dx &= \int - \frac{1-\sin^2 y)}{\sin y} \,dy\\
+    \text{Note: }1 &= \textcolor{red}{\cos^2 y+\sin^2 y}\\
+    e^{x+1}&=- \int\frac{1}{\sin y} - \sin y \,dy\\
+\end{align*}
+\end{hwk}
+\begin{hwk}
+\S7 $\#$7\\
+\begin{align*}
+    y^2 \,dx +\left[x \sqrt{y^2-x^2}-xy \right] \,dy &=0\\
+    y^2 \,dx +\left[x \sqrt{x^2\left( \frac{y^2}{x^2}-1\right) }-xy \right] \,dy &=0\\
+    y^2 \,dx +\left[x*x \sqrt{\frac{y^2}{x^2}-1}-xy \right] \,dy &=0\\
+   y^2 \,dx +\left[x^2 \sqrt{\frac{y^2}{x^2}-1}-xy \right] \,dy &=0\\
+  \frac{y^2}{x^2} \,dx +\left[\frac{x^2 \sqrt{\frac{y^2}{x^2}-1}}{x^2}-\frac{xy}{x^2} \right] \,dy &=0\\
+  \frac{y^2}{x^2} \,dx +\left[\sqrt{\frac{y^2}{x^2}-1}-\frac{y}{x} \right] \,dy &=0\\
+  u&= \frac{y}{x}\\
+  y&= ux\\
+  dy&= u\,dx+x\,du\\
+  u^2 \,dx +\left[ \sqrt{u^2-1} -u \right] *\left[ u\,dx +x\,du \right] &=0\\
+  u^2 \,dx +\left[ \sqrt{u^2-1} -u \right] *u\,dx + \left[ \sqrt{u^2-1} -u \right] x\,du &=0\\
+  \left[ u^2+u\sqrt{u^2-1}-u^2\right]\,dx + \left[\sqrt{u^2-1}\right]x\,du &=0\\
+  \left[u\sqrt{u^2-1}\right]\,dx + \left[\sqrt{u^2-1}\right]x\,du &=0\\
+  \frac{\left[u\sqrt{u^2-1}\right]}{\left[u\sqrt{u^2-1}\right]}\,dx &= -\frac{\left[\sqrt{u^2-1}\right]}{\left[u\sqrt{u^2-1}\right]}x\,du\\
+  \frac{1}{x}\,dx &= -\frac{\left[\sqrt{u^2-1}\right]}{\left[u\sqrt{u^2-1}\right]}\frac{x}{x}\,du\\
+  \frac{1}{x}\,dx &= -\left[ \frac{1}{u} - \frac{1}{\sqrt{u^2-1}} \right] \,du
+\end{align*}
+\end{hwk}
+\section*{\S 8C Linear Coefficient, Non-Homogeneous, Non-Parallel}
+$(\star ) \rightarrow P(x,y)dx +Q(x,y)dy=0$\\
+If $P(x,y)= a_1x+b_1y+c_1$ and $Q(x,y)= a_2x+b_2y+c_2$ are both linear functions and where $c_1, c_2$ are both not zero.\\
+If $\frac{a_1}{b_1}\neq \frac{a_2}{b_2}$ then the slope of the the lines are not equal and $\exists !$ (there exists unique) point of intersection.\\
+Let:
+\begin{align*}
+    u=P(x,y)&=a_1x+b_1y+c_1\\
+    v= Q(x,y)&= a_2x+b_2y+c_2\\
+    du&= a_1dx+b_1dy\\
+    dv&=a_2dx+b_2dy
+\end{align*}
+Then if we solve for $dx$, $dy$ and substitute in, this gives ordinary differential equation with homogeneous coefficients $\rightarrow$ \S 7.
+\begin{ex}
+\begin{step} Find u, v, du, dv
+\begin{align*}
+    (x=2y)dx+(y-1)dy&=0\\
+    u&= x+2y\\
+    du&= dx+2dy\\
+    y&= y-1\\
+    dy&= dy\\
+    \end{align*}
+\end{step}
+\begin{step} Solve for dx,dy in terms of du,dv
+    \begin{align*}
+    dx&= du-2dy\\
+    dy&=dv\\
+    dx&= du-2dv
+    \end{align*}
+\end{step}
+\begin{step} Sub into Original Equation
+    \begin{align*}
+    u(du-2\,dv)+,v\,dv&=0\\
+    u\,du-s\,dv+v\,dv&=0
+    \end{align*}
+\end{step}
+\begin{step} Check for Homogeneity $\rightarrow$ can write $Q(x,y)$ as $x^n*g\left(\frac{y}{x}\right)$
+    \begin{align*}
+    \textcolor{red}{\text{Yes, Homogeneous Coefficients}} \rightarrow \frac{u}{v}du+\left( -\frac{2u}{v}+1\right) dv &=0 \\
+    u\,du+(-2u+v)dv&=0
+    \end{align*}
+\end{step}
+\begin{step} Sub into Original Equation
+    \begin{align*}
+    y&=ux\\
+    u&=tv\\
+    du&= t\,dv+v\,dt\\
+    tv(t\,dv+v\.dt)+(-2tv+v)dv&=0\\
+    \text{Algebra}\\
+    tv^2\,dt + (^2-2t+1)v\,dv&=0
+    \end{align*}
+\end{step}
+\begin{step} Separate, Use \S 6 Techniques
+    \begin{align*}
+    \frac{t}{t^2-2t+1}dt+\frac{1}{v}dv &= 0\\
+    t&\neq -1\\
+    v&\neq 0\\
+    \int \frac{t \textcolor{red}{-1+1}}{(t-1)^2}dt&= \int \frac{t-1}{(t-1)^2}+\frac{1}{(t-1)^2}\,dt\\
+    \int \frac{1}{t-1}dt&= \int \frac{1}{(t-1)}+(t-1)^{-2}\,dt\\
+    \int \frac{1}{t-1}dt&=\ln|t-1|+-(t-1)^{-1}\\
+    \ln |t-1|-(t-1)^{-1} + \ln|v|&=c
+    \end{align*}
+\end{step}
+\begin{step} Back Substitute
+    \begin{align*}
+    t&=\frac{u}{v}\\
+    u&= x+2y\\
+    v&= y-1\\
+    \ln \left| \frac{x+2y}{y-1} -1 \right| - \left(\frac{x+2y}{y-1} -1 \right) ^{-1} +\ln |y-1|&=c
+\end{align*}
+\end{step}
+\end{ex}
+\section*{\S 8D Parallel Lines}
+\begin{ex}
+\begin{align*}
+    (3x+2y+1)dx+(3x+2y-1)dy&= 0\\
+    u&= 3x+2y+1\\
+    du&= 3dx+2dy\\
+    dy&= \frac{du-3dx}{2}\\
+    u\,dx+(u-2) \left(\frac{1}{2}du-\frac{3}{2}dx \right) &=0\\
+    u\,dx + \frac{1}{2}u\,du - du-\frac{3}{2}u\,dx+3dx&=0\\
+    \left( -\frac{1}{2}u +3 \right) dx + \left(\frac{1}{2}u-1 \right)du&= 0\\
+    dx&= \frac{1-\frac{1}{2}u}{-\frac{1}{2}u+3}du\\
+    dx&=\frac{2-u}{-u+\frac{3}{2}}du\\
+    \int dx&= \int \frac{2-u}{-u+\frac{3}{2}}du\\
+    \int dx&= \int \frac{2-\frac{3}{2}+\left( -u+\frac{3}{2}\right)}{\frac{3}{2}-u}du\\
+    \int dx&=\int \frac{1}{2}* \frac{1}{\frac{3}{2}-u}+1 du\\
+    \int dx&= \int \frac{1}{3-\frac{u}{2}}+1\,du\\
+    v&= 3-\frac{u}{2}\\
+    dv&=-\frac{1}{2}du\\
+    -2dv&=du\\
+    x&= -2\ln \left| 3-\frac{u}{2}\right| +u +c\\
+    x&= -2\ln\left| 3-\frac{1}{2}(3x+2y+1) \right| +3x+2y+1+c\\
+    c&= \text{...}
+\end{align*}
+\end{ex}
