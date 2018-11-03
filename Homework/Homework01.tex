@@ -120,17 +120,54 @@ This is similar to Example 1.2.4 and to Exercise 8 in Section 1.2 of your SNHU M
 \begin{prob}
 Use truth tables to determine which of the following formulas are tautologies, which are contradictions, and which are neither.
 \begin{enumerate}
-\item $ (M \wedge \neg N) \vee ( \neg M \wedge N) $
-\item $ (M \wedge \neg N) \wedge ( \neg M \wedge N) $
-\item $ ( \neg M \wedge \neg N) \vee ( \neg M \vee N) \vee (M \wedge \neg N) $
+\item $ (M \wedge \neg N) \vee ( \neg M \wedge N) $\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} 
+\hline
+M & N & $ \neg N $ & $ M \wedge \neg N $ & $ \neg M $ & $ \neg M \wedge N $ & $ (M \wedge \neg N) \vee ( \neg M \wedge N) $ \\
+\hline
+T & T & F          & T                   & F          & F                   & T                                             \\
+T & F & T          & F                   & F          & F                   & F                                             \\
+F & T & F          & F                   & T          & T                   & T                                             \\
+F & F & T          & F                   & T          & F                   & F                                              \\
+\hline
+\end{tabular}
+\end{center}
+\item $ (M \wedge \neg N) \wedge ( \neg M \wedge N) $ \\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} 
+\hline
+M & N & $ \neg N $ & $ M \wedge \neg N $ & $ \neg M $ & $ \neg M \wedge N $ & $ (M \wedge \neg N) \wedge ( \neg M \wedge N) $ \\
+\hline
+T & T & F          & T                   & F          & F                   & F                                               \\
+T & F & T          & F                   & F          & F                   & F                                               \\
+F & T & F          & F                   & T          & T                   & F                                               \\
+F & F & T          & F                   & T          & F                   & F                                               \\
+\hline
+\end{tabular}
+\end{center}
+This is a Contradiction because the formula will always evaluate to false.
+\item $ ( \neg M \wedge \neg N) \vee ( \neg M \vee N) \vee (M \wedge \neg N) $\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
+\hline
+M & N & $ \neg M $ & $ \neg N $ & $ \neg M \wedge \neg N $ & $ \neg M \vee N $ & $ M \wedge \neg N $ & \begin{tabular}{@{}c@{}}$ ( \neg M \wedge \neg N ) \vee $ \\ $ ( \neg M \vee N ) $ \end{tabular} & \begin{tabular}{@{}c@{}}$ ( \neg M \wedge \neg N) \vee $ \\ $  ( \neg M \vee N) \vee $ \\ $  (M \wedge \neg N) $ \end{tabular}  \\
+\hline
+T & T & F & F & F & T & F & T & T \\
+T & F & F & T & F & F & T & F & T \\
+F & T & T & F & F & T & F & T & T \\
+F & F & T & T & T & T & F & T & T \\
+\hline
+\end{tabular}
+\end{center}
 \end{enumerate}
 This is similar to Example 1.2.6 and to Exercise 9 in Section 1.2 of your SNHU MAT299 textbook.
 \end{prob}
 \begin{prob}
 Use the laws stated in the text to find simpler formulas equivalent to these formulas. Explain the reasoning that you used to find your solution.
 \begin{enumerate}
-\item ¬[ ¬Q ? (¬P ? Q) ]
-\item ((P ? Q) ? ¬R) ? [P ? ¬(Q ? R)]
+\item $ \neg ( \neg Q \vee ( \neg P \wedge Q) ) $
+\item $ ((P \wedge Q) \wedge \neg R) \vee (P \wedge \neg (Q \vee R)) $
 \end{enumerate}
 This is similar to Examples 1.2.5, 1.2.6, and 1.2.7 and to Exercise 12 in Section 1.2 of your SNHU MAT299 textbook
 \end{prob}
